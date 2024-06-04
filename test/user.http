@@ -1,0 +1,30 @@
+###get users
+GET http://127.0.0.1:3000/user?offset=2&limit=3
+Accept: application/json
+
+###get single user
+GET http://127.0.0.1:3000/user/12
+Accept: application/json
+
+###create user
+POST http://127.0.0.1:3000/user
+Content-Type: application/json
+
+{
+  "name": "wangjie",
+  "email": "wangjie@gmail.com"
+}
+
+###update user
+PATCH http://127.0.0.1:3000/user/1
+Content-Type: application/json
+
+{
+  "name": "wangjiewoaini"
+}
+
+###delete user
+DELETE http://127.0.0.1:3000/user/1
+Content-Type: application/json
+
+

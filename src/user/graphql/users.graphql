@@ -1,0 +1,61 @@
+scalar Date
+
+type User{
+    id:ID!
+    name:String!
+    email:String!
+    create_at:Date!
+    update_at:Date!
+}
+
+type Query{
+    users:[User!]!
+    user(id:ID!):User!
+}
+
+type Mutation{
+    createUser(createUserInput:CreateUserInput):User!
+    updateUser(id:ID!,updateUserInput:UpdateUserInput):User!
+    deleteUser(id:ID!):User!
+}
+
+input CreateUserInput{
+    name:String!
+    email:String!
+}
+
+input UpdateUserInput{
+    name:String
+    email:String
+}
+
+#interface
+interface Drink{
+    name:String!
+}
+
+type Tea implements Drink{
+    name:String!
+}
+
+#union
+type WangJie{
+    name:String!
+}
+
+type PuQiuLin{
+    name:String!
+}
+
+union Lover=WangJie|PuQiuLin
+
+#enum
+enum LoverType{
+    WANGJIE
+    PUQIULIN
+}
+
+#subscription
+type Subscription{
+    userAdd:User!
+}
