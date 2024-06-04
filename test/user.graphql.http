@@ -1,0 +1,57 @@
+### get users
+GRAPHQL http://127.0.0.1:3000/graphql
+
+query {
+    users{
+        id
+    }
+}
+
+### get user
+GRAPHQL http://127.0.0.1:3000/graphql
+
+query {
+    user(id:"1"){
+        id,
+        name,
+        email
+    }
+}
+
+### update user
+GRAPHQL http://127.0.0.1:3000/graphql
+
+mutation {
+    createUser(createUserInput: {
+        name:"wangjie",
+        name:"wangjie@gmail.com"
+    }){
+        id,
+        name,
+        email
+    }
+}
+
+### update user
+GRAPHQL http://127.0.0.1:3000/graphql
+
+mutation {
+    updateUser(updateUserInput: {
+        name:"puqiulin",
+    }){
+        id,
+        name,
+        email
+    }
+}
+
+### delete user
+GRAPHQL http://127.0.0.1:3000/graphql
+
+mutation {
+    deleteUser(id:1){
+        id,
+        name,
+        email
+    }
+}
